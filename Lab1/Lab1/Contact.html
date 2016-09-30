@@ -3,23 +3,25 @@
 <head>
     <title>For More Information</title>
 	<meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="PageStyles.css" />
 </head>
 <body>
-    <link rel="stylesheet" type="text/css" href="PageStyles.css" />
-    <form action="http://www.oit.edu" method="post">
+    
+    <form action="http://www.oit.edu/" method="post">
         <fieldset>
             <legend>For More Information</legend>
-            <label>Email Address</label><br />
-            <input name="EmailAddress" type="text" /><br />
-            <label>Specific Interest</label><br />
-            <textarea name="SpecificInterest"></textarea><br />
-            <label>User Type</label><br />
-            <select name="UserType">
+            <input id="uxEmailAddress" name="EmailAddress" type="text" />
+            <label for="uxEmailAddress">Email Address</label><br />
+
+            <textarea id="uxSpecificInterest" name="SpecificInterest"></textarea>
+            <label for="uxSpecificInterest">Specific Interest</label><br />
+            
+            <select id="uxUserType" name="UserType">
                 <option>Faculty/Staff</option>
                 <option>Student</option>
-            </select><br />
-            <label>Submit</label><br />
-            <button type="submit">Submit</button>
+            </select><label for="uxUserType">User Type</label><br />
+            
+            <button type="submit">Submit</button><br />
         </fieldset>
     </form>
 </body>
