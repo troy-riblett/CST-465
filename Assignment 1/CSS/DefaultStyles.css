@@ -1,0 +1,21 @@
+﻿nav{
+    float:left;
+    width:25%;
+}
+
+main{
+    float:right;
+    width:75%;
+}
+
+footer
+{
+    clear:both;
+    color:black;
+    font-size:.75em;
+    width:100%;
+}
+
+h1{
+    text-align:center;
+}
