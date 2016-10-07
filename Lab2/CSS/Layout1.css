@@ -1,0 +1,44 @@
+﻿html{
+    font-size:16px;
+    font-family:"Times New Roman", Times, serif;
+}
+
+nav ul{
+    list-style-type:none;
+    margin:0px;
+    padding:0px;
+}
+
+main{
+    margin-bottom:50px;
+}
+
+nav ul li{
+    border:1px;
+    background:linear-gradient(to bottom, #cdcdcd, #ffffff);
+    border-radius:5px;
+    padding:6px;
+}
+
+footer{
+    clear:both;
+    background-color:black;
+    color:white;
+    position:fixed;
+    bottom:0;
+    left:0;
+    height:50px;
+    width:100%;
+}
+
+@media screen and (min-width:800px){
+    nav{
+        width:25%;
+        max-width:300px;
+        float:left;
+    }
+    main{
+        width:75%;
+        float:left;
+    }
+}
