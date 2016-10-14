@@ -8,7 +8,7 @@ using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
 
-namespace Lab1
+namespace CST465
 {
     public class Global : HttpApplication
     {

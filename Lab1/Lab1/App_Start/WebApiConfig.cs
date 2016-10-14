@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace Lab1
+namespace CST465
 {
     public static class WebApiConfig
     {

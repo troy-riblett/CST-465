@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="CST465.WebForms.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <nav>
+            <a href="https://weblogs.asp.net/scottgu">ScottGu's Blog</a>
+            <a href="http://www.hanselman.com/blog/">Scott Hanselman's blog</a>
+            <a href="http://odetocode.com/blogs/all">Ode To Code</a>
+            <asp:ContentPlaceHolder ID="NavContentPlaceHolder" runat="server">
+        
+            </asp:ContentPlaceHolder>
+        </nav>
+        <main>
+            <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
+        
+            </asp:ContentPlaceHolder>
+        </main>
+        
+    </div>
+    </form>
+</body>
+</html>
