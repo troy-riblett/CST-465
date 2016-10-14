@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="CST465.WebForms.Contact" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" EnableViewState="false" CodeBehind="Contact.aspx.cs" Inherits="CST465.WebForms.Contact" %>
 
 <!DOCTYPE html>
 

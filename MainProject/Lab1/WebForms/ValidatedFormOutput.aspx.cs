@@ -11,9 +11,9 @@ namespace Lab1.WebForms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Request.QueryString["name"] != null &&
-               Request.QueryString["favoritecolor"] != null &&
-               Request.QueryString["city"] != null)
+            if( !String.IsNullOrEmpty(Request.QueryString["name"]) &&
+               !String.IsNullOrEmpty(Request.QueryString["favoritecolor"]) &&
+               !String.IsNullOrEmpty(Request.QueryString["city"]))
             {
                 uxNameLiteral.Text = Request.QueryString["name"];
                 uxFavoriteColorLiteral.Text = Request.QueryString["favoritecolor"];
