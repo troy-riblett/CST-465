@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @RenderSection("styles", false)
+</head>
+<body>
+    <header>
+        <span id="LayoutHeaderMain">page-ant.com</span> <br />
+        <span id="LayoutHeaderSecondary">We carry more than our weight to parade the best books in front of you</span>
+            @RenderSection("header", false)
+    </header>
+    <main>@RenderBody()</main>
+    <footer>@RenderSection("footer", false)
+        <p id="LayoutFooterCopyright">Copyright 2016, Troy Riblett/Page-ant.com. All rights reserved as well as some lefts</p>
+    </footer>
+</body>
+</html>
