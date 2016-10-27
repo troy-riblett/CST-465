@@ -136,7 +136,6 @@ C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\roslyn\VBCSCompiler.ex
 C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\Lab1.dll
 C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\Lab1.pdb
 C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\mscorlib.dll
 C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\Newtonsoft.Json.dll
 C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\System.Net.Http.Formatting.dll
 C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\System.Web.Helpers.dll
@@ -158,11 +157,8 @@ C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\Newtonsoft.Json.xml
 C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\System.Net.Http.Formatting.xml
 C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\System.Web.Http.xml
 C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\System.Web.Http.WebHost.xml
-C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\normidna.nlp
-C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\normnfc.nlp
-C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\normnfd.nlp
-C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\normnfkc.nlp
-C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\normnfkd.nlp
 C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\obj\Debug\CST 465 Lab.csprojResolveAssemblyReference.cache
 C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\obj\Debug\Lab1.dll
 C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\obj\Debug\Lab1.pdb
+C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\Lab1.dll.config
+C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\Microsoft.Web.Infrastructure.dll

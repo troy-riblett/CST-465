@@ -2,18 +2,24 @@
 
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="~/CSS/DefaultStyles.css">
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <link rel="stylesheet" type="text/css" href="~/CSS/DefaultStyles.css">
     @RenderSection("styles", false)
 </head>
 <body>
     <header>
-        <span id="LayoutHeaderMain">page-ant.com</span> <br />
-        <span id="LayoutHeaderSecondary">We carry more than our weight to parade the best books in front of you</span>
+        <div class="LayoutHeaderMain">PAGE-ANT.COM</div>
+        <div class="LayoutHeaderSecondary">We carry more than our weight to parade the best books in front of you</div>
             @RenderSection("header", false)
     </header>
-    <nav></nav>
+    <nav>
+        <ul >
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li>@Html.ActionLink("About", "Index", "About")</li>
+            <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
+        </ul>
+    </nav>
     <main>@RenderBody()</main>
     <footer>@RenderSection("footer", false)
         <p id="LayoutFooterCopyright">Copyright 2016, Troy Riblett/Page-ant.com. All rights reserved as well as some lefts</p>
