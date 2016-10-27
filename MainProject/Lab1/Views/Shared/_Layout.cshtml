@@ -4,6 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="~/CSS/DefaultStyles.css">
     @RenderSection("styles", false)
 </head>
 <body>
@@ -12,6 +13,7 @@
         <span id="LayoutHeaderSecondary">We carry more than our weight to parade the best books in front of you</span>
             @RenderSection("header", false)
     </header>
+    <nav></nav>
     <main>@RenderBody()</main>
     <footer>@RenderSection("footer", false)
         <p id="LayoutFooterCopyright">Copyright 2016, Troy Riblett/Page-ant.com. All rights reserved as well as some lefts</p>
