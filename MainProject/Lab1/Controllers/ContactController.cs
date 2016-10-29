@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Lab1.Controllers
+namespace CST465.Controllers
 {
     public class ContactController : Controller
     {
