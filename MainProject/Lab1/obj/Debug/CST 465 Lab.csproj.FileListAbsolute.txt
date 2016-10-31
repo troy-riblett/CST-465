@@ -161,3 +161,4 @@ C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\obj\Debug\Lab1.dll
 C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\obj\Debug\Lab1.pdb
 C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\Lab1.dll.config
 C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\obj\Debug\CST 465 Lab.csprojResolveAssemblyReference.cache
