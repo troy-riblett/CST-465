@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace CST465.Controllers
+namespace CST465
 {
     public class HomeController : Controller
     {

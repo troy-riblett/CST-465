@@ -14,14 +14,14 @@ namespace CST465
         {
             BlogPost blog = null;
 
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["troy_riblett"].ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["aura"].ConnectionString))
             {
                 connection.Open();
                 using (SqlCommand command = new SqlCommand())
                 {
                     command.Connection = connection;
                     command.CommandType = CommandType.Text;
-                    command.CommandText = "Select * From BlogPosts Where ID = @ID";
+                    command.CommandText = "Select * From Blog Where ID = @ID";
 
                     command.Parameters.AddWithValue("@ID", id);
                     SqlDataReader reader = command.ExecuteReader();
@@ -63,7 +63,7 @@ namespace CST465
                     command.Connection = connection;
                     command.CommandType = CommandType.Text;
 
-                    command.CommandText = "Select * From BlogPosts";
+                    command.CommandText = "Select * From Blog";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -87,7 +87,7 @@ namespace CST465
 
         void IDataEntityRepository<BlogPost>.Save(BlogPost entity)
         {
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["troy_riblett"].ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["aura"].ConnectionString))
             {
                 connection.Open();
                 using (SqlCommand command = new SqlCommand())
@@ -100,12 +100,12 @@ namespace CST465
                     if (entity.ID == 0)
                     {
                         failMessage = "Insert operation failed";
-                        command.CommandText = "INSERT into BlogPosts (Author, Content, Timestamp, Title) Values (@Author, @Content, @Timestamp, @Title)";
+                        command.CommandText = "INSERT into Blog (Author, Content, Timestamp, Title) Values (@Author, @Content, @Timestamp, @Title)";
                     }
                     else
                     {
                         failMessage = "Update operation failed";
-                        command.CommandText = "UPDATE BlogPosts SET Author = @Author, Content = @Content, Timestamp = @Timestamp, Title=@Title WHERE ID = @ID";
+                        command.CommandText = "UPDATE Blog SET Author = @Author, Content = @Content, Timestamp = @Timestamp, Title=@Title WHERE ID = @ID";
                         command.Parameters.AddWithValue("@ID", entity.ID);
                     }
 

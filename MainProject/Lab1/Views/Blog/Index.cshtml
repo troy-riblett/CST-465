@@ -1,11 +1,21 @@
-﻿@model List<BlogPost>
+﻿@model List<CST465.BlogPost>
 @{ 
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Viewing Blog Posts";
 }
 <h1>Viewing Blog Posts</h1>
 
-@foreach(BlogPost blog in Model)
+@foreach (CST465.BlogPost blog in Model)
 {
-    <div><h2>@blog.Title</h2></div>
+    <div>
+        <h2>@blog.Title</h2>
+        <p>@blog.Content</p>
+        <div>By: @blog.Author</div>
+        @Html.ActionLink("Edit Post", "Edit", new { @ID = blog.ID })
+    </div>
 }
+
+<br />
+<div>
+    @Html.ActionLink("Add", "Add", new { })
+</div>

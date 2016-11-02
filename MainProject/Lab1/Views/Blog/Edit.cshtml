@@ -1,11 +1,11 @@
-﻿@Model BlogPostModel
+﻿@Model CST465.BlogPostModel
 @{ 
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Editting a Blog Post";
 }
 <h1>Edit a Blog Post</h1>
 
-@using (Html.BeingForm())
+@using (Html.BeginForm())
 {
     @Html.EditorForModel()
     <button type="submit">Submit</button>

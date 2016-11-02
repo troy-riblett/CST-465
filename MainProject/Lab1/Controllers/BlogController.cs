@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace CST465.Controllers
+namespace CST465
 {
     public class BlogController : Controller
     {
@@ -24,7 +24,7 @@ namespace CST465.Controllers
 
         public ActionResult Add()
         {
-            return View(new BlogPost());
+            return View(new BlogPostModel());
         }
 
         [HttpPost]
