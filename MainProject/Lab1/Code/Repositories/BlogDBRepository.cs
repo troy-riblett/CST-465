@@ -100,18 +100,17 @@ namespace CST465
                     if (entity.ID == 0)
                     {
                         failMessage = "Insert operation failed";
-                        command.CommandText = "INSERT into Blog (Author, Content, Timestamp, Title) Values (@Author, @Content, @Timestamp, @Title)";
+                        command.CommandText = "INSERT into Blog (Author, Content, Timestamp, Title) Values (@Author, @Content, @Title)";
                     }
                     else
                     {
                         failMessage = "Update operation failed";
-                        command.CommandText = "UPDATE Blog SET Author = @Author, Content = @Content, Timestamp = @Timestamp, Title=@Title WHERE ID = @ID";
+                        command.CommandText = "UPDATE Blog SET Author = @Author, Content = @Content, Title=@Title WHERE ID = @ID";
                         command.Parameters.AddWithValue("@ID", entity.ID);
                     }
 
                     command.Parameters.AddWithValue("@Author", entity.Author);
                     command.Parameters.AddWithValue("@Content", entity.Content);
-                    command.Parameters.AddWithValue("@Timestamp", entity.Timestamp);
                     command.Parameters.AddWithValue("@Title", entity.Title);
 
                     if (command.ExecuteNonQuery() < 1)
