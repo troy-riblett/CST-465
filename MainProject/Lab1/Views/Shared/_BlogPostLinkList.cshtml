@@ -1,0 +1,9 @@
+﻿@model IEnumerable<CST465.BlogPost>
+@{
+    Layout = null;
+}
+
+@foreach(CST465.BlogPost post in Model)
+{
+    <div>@Html.ActionLink(post.Title, "ViewSingle", post); - Posted on: @post.Timestamp</div>
+}

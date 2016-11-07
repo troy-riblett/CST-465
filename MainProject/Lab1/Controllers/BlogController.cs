@@ -74,5 +74,10 @@ namespace CST465
             }
         }
         
+        public ActionResult ViewSingle(int id)
+        {
+            BlogPost post = m_blogPostRepo.Get(id);
+            return View(post);
+        }
     }
 }

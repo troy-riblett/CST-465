@@ -180,6 +180,10 @@
     <Content Include="Views\Blog\Add.cshtml" />
     <Content Include="Views\Blog\Edit.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Blog\ViewSingle.cshtml" />
+    <Content Include="Views\Blog\DisplayTemplates\BlogPost.cshtml" />
+    <Content Include="Views\Blog\EditorTemplates\BlogPostModel.cshtml" />
+    <Content Include="Views\Shared\_BlogPostLinkList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
