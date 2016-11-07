@@ -100,7 +100,7 @@ namespace CST465
                     if (entity.ID == 0)
                     {
                         failMessage = "Insert operation failed";
-                        command.CommandText = "INSERT into Blog (Author, Content, Timestamp, Title) Values (@Author, @Content, @Title)";
+                        command.CommandText = "INSERT into Blog (Author, Content, Title) Values (@Author, @Content, @Title)";
                     }
                     else
                     {

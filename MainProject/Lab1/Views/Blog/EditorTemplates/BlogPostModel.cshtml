@@ -5,12 +5,14 @@
 
 @Html.LabelFor(model => model.Title)
 @Html.TextBoxFor(model => model.Title)
-@Html.ValidationMessageFor(model => model.Title, "Please enter new title")
-
-@Html.LabelFor(model => model.Content)
-@Html.TextAreaFor(model => model.Content)
-@Html.ValidationMessageFor(model => model.Content, "Blog must have content")
+@Html.ValidationMessageFor(model => model.Title)
 
 @Html.LabelFor(model => model.Author)
 @Html.TextBoxFor(model => model.Author)
-@Html.ValidationMessageFor(model => model.Author, "Surely someone wrote this!?")
+@Html.ValidationMessageFor(model => model.Author)
+<br />
+
+@Html.LabelFor(model => model.Content)
+@Html.TextAreaFor(model => model.Content)
+@Html.ValidationMessageFor(model => model.Content)
+<br />

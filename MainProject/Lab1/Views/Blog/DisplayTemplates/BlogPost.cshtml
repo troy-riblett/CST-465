@@ -1,9 +1,10 @@
 ﻿@model CST465.BlogPost
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.Title;</h2>
+<h2>@Model.Title</h2>
 <p>@Model.Content</p>
 <div>By: @Model.Author</div>
 <div>Published on: @Model.Timestamp</div>
+@Html.ActionLink("Edit Post", "Edit", new { @ID = Model.ID })
