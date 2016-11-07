@@ -9,8 +9,8 @@ namespace CST465
 {
     public class TrueFalseQuestion : TestQuestion
     {
-        [Required]
-        [RegularExpression("^(True|False)$")]
+        [Required(ErrorMessage = "Please answer this question")]
+        [RegularExpression("^(True|False)$", ErrorMessage = "Please select either True or False")]
         override public string Answer { get; set; }
     }
 }

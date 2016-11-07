@@ -1,0 +1,15 @@
+﻿@model List<CST465.TestQuestion>
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Midterm Results";
+}
+<h1>Midterm Results</h1>
+
+@using (Html.BeginForm())
+{
+    for (int i = 0; i < Model.Count; ++i)
+    {
+        @Html.DisplayFor(model => model[i]);
+    }
+    <button type="submit">Submit</button>
+}

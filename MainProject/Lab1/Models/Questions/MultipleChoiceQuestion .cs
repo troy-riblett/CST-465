@@ -9,7 +9,7 @@ namespace CST465
 {
     public class MultipleChoiceQuestion : TestQuestion
     {
-        [Required]
+        [Required(ErrorMessage = "Please select an answer")]
         override public string Answer { get; set; }
         public List<String> Choices { get; set; }
     }

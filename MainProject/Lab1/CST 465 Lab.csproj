@@ -192,6 +192,12 @@
     <Content Include="Views\Blog\EditorTemplates\BlogPostModel.cshtml" />
     <Content Include="Views\Shared\_BlogPostLinkList.cshtml" />
     <Content Include="JSON\Midterm.json" />
+    <Content Include="Views\Midterm\TakeTest.cshtml" />
+    <Content Include="Views\Midterm\DisplayResults.cshtml" />
+    <Content Include="Views\Midterm\EditorTemplates\TrueFalseQuestion.cshtml" />
+    <Content Include="Views\Midterm\EditorTemplates\ShortAnswerQuestion.cshtml" />
+    <Content Include="Views\Midterm\EditorTemplates\LongAnswerQuestion.cshtml" />
+    <Content Include="Views\Midterm\EditorTemplates\MultipleChoiceQuestion.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -204,7 +210,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Img\" />
     <Folder Include="Scripts\" />
-    <Folder Include="Views\Midterm\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

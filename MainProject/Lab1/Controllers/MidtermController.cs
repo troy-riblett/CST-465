@@ -25,25 +25,30 @@ namespace CST465
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult TakeTest(List<string> answerList)
+        public ActionResult TakeTest(string dummyVar)
         {
             List<TestQuestion> questionList = RetrieveQuestions();
 
+            foreach (TestQuestion question in questionList)
+            {
+                question.Answer = Request.QueryString[question.ID.ToString()];
+            }
+
             if (ModelState.IsValid)
             {
-                TempData["Questions"] = 
+                TempData["TestData"] = questionList;
                 return RedirectToAction("DisplayResults");
             }
             else
             {
-                return View();
+                return View(questionList);
             }
         }
 
         [HttpGet]
         public ActionResult DisplayResults()
         {
-            List<TestQuestion> questionList = (List<TestQuestion>)TempData["Questions"];
+            List<TestQuestion> questionList = (List<TestQuestion>)TempData["TestData"];
 
             return View(questionList);
         }

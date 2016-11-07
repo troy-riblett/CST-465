@@ -9,7 +9,7 @@ namespace CST465
 {
     public class LongAnswerQuestion : TestQuestion
     {
-        [Required]
+        [Required(ErrorMessage = "Please answer this question")]
         override public string Answer { get; set; }
     }
 }

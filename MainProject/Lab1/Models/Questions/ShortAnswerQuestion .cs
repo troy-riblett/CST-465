@@ -9,8 +9,8 @@ namespace CST465
 {
     public class ShortAnswerQuestion : TestQuestion
     {
-        [Required]
-        [MaxLength(100)]
+        [Required(ErrorMessage = "Please answer this question")]
+        [MaxLength(100, ErrorMessage = "Max of 100 characters, please use fewer")]
         override public string Answer { get; set; }
     }
 }

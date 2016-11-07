@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace CST465
 {
-    public class AnsweredQuestion
+    public class AnsweredQuestion : TestQuestion
     {
-        public int ID { get; set; }
-        public string Question { get; set; }
         public string Answer { get; set; }
     }
 }

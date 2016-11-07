@@ -1,0 +1,19 @@
+﻿@model List<CST465.TestQuestion>
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Midterm Exam!";
+}
+<h1>Time to take your midterm!</h1>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken();
+
+    for (int i = 0; i < Model.Count; ++i)
+    {
+        @Html.EditorFor(Model => Model[i]);
+    }
+
+    <br />
+    <button type="submit">Submit</button>
+}
