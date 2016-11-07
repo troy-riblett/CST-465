@@ -125,10 +125,17 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MidtermController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Blog\BlogPostModel.cs" />
+    <Compile Include="Models\Questions\AnsweredQuestion.cs" />
+    <Compile Include="Models\Questions\TrueFalseQuestion.cs" />
+    <Compile Include="Models\Questions\LongAnswerQuestion .cs" />
+    <Compile Include="Models\Questions\MultipleChoiceQuestion .cs" />
+    <Compile Include="Models\Questions\ShortAnswerQuestion .cs" />
+    <Compile Include="Models\Questions\TestQuestion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebForms\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -184,6 +191,7 @@
     <Content Include="Views\Blog\DisplayTemplates\BlogPost.cshtml" />
     <Content Include="Views\Blog\EditorTemplates\BlogPostModel.cshtml" />
     <Content Include="Views\Shared\_BlogPostLinkList.cshtml" />
+    <Content Include="JSON\Midterm.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -196,6 +204,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Img\" />
     <Folder Include="Scripts\" />
+    <Folder Include="Views\Midterm\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

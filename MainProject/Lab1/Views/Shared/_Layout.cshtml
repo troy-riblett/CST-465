@@ -19,11 +19,16 @@
             <li>@Html.ActionLink("About", "Index", "About")</li>
             <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
             <li>@Html.ActionLink("Blog", "Index", "Blog")</li>
+            <li>@Html.ActionLink("Midterm", "TakeTest", "Midterm") </li>
         </ul>
     </nav>
     <main>@RenderBody()</main>
     <footer>@RenderSection("footer", false)
         <p id="LayoutFooterCopyright">Copyright 2016, Troy Riblett/Page-ant.com. All rights reserved as well as some lefts</p>
     </footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.6/jquery.validate.unobtrusive.js"></script>
 </body>
 </html>
+
