@@ -3,12 +3,14 @@
     Layout = null;
 }
 
-<h2>@Html.Raw(@Model.Question)</h2>
-@foreach(string choice in Model.Choices)
-{
-    @Html.RadioButtonFor(Model => Model.Answer, choice)
-    @Html.Label(choice)
-}
 <div>
-    @Html.ValidationMessageFor(Model => Model.Answer)
+    <h2>@Html.Raw(@Model.Question)</h2>
+    @foreach (string choice in Model.Choices)
+    {
+        @Html.RadioButtonFor(Model => Model.Answer, choice)
+        @Html.Label(choice)
+    }
+    <div>
+        @Html.ValidationMessageFor(Model => Model.Answer)
+    </div>
 </div>

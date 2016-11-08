@@ -3,6 +3,8 @@
     Layout = null;
 }
 
-<h2>@Html.Raw(@Model.Question)</h2>
-@Html.TextBoxFor(Model => Model.Answer)
-<div>@Html.ValidationMessageFor(Model => Model.Answer)</div>
+<div>
+    <h2>@Html.Raw(@Model.Question)</h2>
+    @Html.TextBoxFor(Model => Model.Answer)
+    <div>@Html.ValidationMessageFor(Model => Model.Answer)</div>
+</div>
