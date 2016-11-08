@@ -5,6 +5,7 @@
 
 <div>
     <h2>@Html.Raw(@Model.Question)</h2>
+    @Html.HiddenFor(Model => Model.ID)
     @Html.DropDownListFor(Model => Model.Answer, new List<SelectListItem>() { new SelectListItem() { Text = "True", Value = "True" }, new SelectListItem() { Text = "False", Value = "False" } })
     <div>@Html.ValidationMessageFor(Model => Model.Answer)</div>
 </div>

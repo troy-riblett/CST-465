@@ -6,5 +6,6 @@
 <div>
     <h2>@Html.Raw(@Model.Question)</h2>
     @Html.TextBoxFor(Model => Model.Answer)
+    <div>@Html.HiddenFor(Model => Model.ID)</div>
     <div>@Html.ValidationMessageFor(Model => Model.Answer)</div>
 </div>

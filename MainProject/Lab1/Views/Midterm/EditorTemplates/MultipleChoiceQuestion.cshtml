@@ -5,12 +5,14 @@
 
 <div>
     <h2>@Html.Raw(@Model.Question)</h2>
-    @foreach (string choice in Model.Choices)
+    @for (int i=0; i < Model.Choices.Count; ++i)
     {
-        @Html.RadioButtonFor(Model => Model.Answer, choice)
-        @Html.Label(choice)
+        @Html.RadioButtonFor(Model => Model.Answer, Model.Choices[i], new { @id = Model.ID.ToString() + "_" + i.ToString() })
+        @Html.Label(Model.Choices[i], new {@for = Model.ID.ToString() + "_" + i.ToString()})
     }
+    <div> @Html.HiddenFor(Model => Model.ID)</div>
     <div>
         @Html.ValidationMessageFor(Model => Model.Answer)
     </div>
+    
 </div>
