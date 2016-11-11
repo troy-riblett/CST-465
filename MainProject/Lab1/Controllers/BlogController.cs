@@ -10,16 +10,27 @@ namespace CST465
     {
         private IDataEntityRepository<BlogPost> m_blogPostRepo;
 
-        public BlogController()
+        public BlogController(IDataEntityRepository<BlogPost> repo)
         {
-            m_blogPostRepo = new BlogDBRepository();
+            m_blogPostRepo = repo;
         }
+
+        //public BlogController()
+        //{
+        //    m_blogPostRepo = new BlogDBRepository();
+        //}
 
         // GET: Blog
         public ActionResult Index()
         {
             return View(m_blogPostRepo.GetList());
             //return View();
+        }
+
+        [HttpPost]
+        public ActionResult Index(string filter)
+        {
+            return View(m_blogPostRepo.GetListByContent(filter));
         }
 
         public ActionResult Add()
@@ -33,7 +44,7 @@ namespace CST465
             if (ModelState.IsValid)
             {
                 BlogPost post = new BlogPost()
-                { Author = model.Author, Content = model.Content, Title = model.Title, Timestamp = DateTime.Now, ID=0 };
+                { Author = model.Author, Content = model.Content, Title = model.Title, Timestamp = DateTime.Now.ToUniversalTime(), ID=0 };
 
                 m_blogPostRepo.Save(post);
                 return RedirectToAction("Index");

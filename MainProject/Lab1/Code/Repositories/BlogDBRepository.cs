@@ -10,7 +10,7 @@ namespace CST465
 {
     public class BlogDBRepository : IDataEntityRepository<BlogPost>
     {
-        BlogPost IDataEntityRepository<BlogPost>.Get(int id)
+        public BlogPost Get(int id)
         {
             BlogPost blog = null;
 
@@ -51,7 +51,7 @@ namespace CST465
             return blog;
         }
 
-        List<BlogPost> IDataEntityRepository<BlogPost>.GetList()
+        public List<BlogPost> GetList()
         {
             List<BlogPost> blogList = new List<BlogPost>();
 
@@ -85,7 +85,7 @@ namespace CST465
             return blogList;
         }
 
-        void IDataEntityRepository<BlogPost>.Save(BlogPost entity)
+        public void Save(BlogPost entity)
         {
             using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["aura"].ConnectionString))
             {

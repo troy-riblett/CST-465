@@ -22,3 +22,13 @@
 <div>
     @Html.ActionLink("Add", "Add", new { })
 </div>
+<br />
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken();
+
+        @Html.TextBox("Filter")
+        <button type="submit">Filter</button>
+    }
+</div>

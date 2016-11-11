@@ -74,6 +74,10 @@ h3 {
     text-align:center;
 }
 
+.labelOwnLine {
+    display: block;
+}
+
 footer{
     color:rgba(  4, 32, 55,1);
     background-color:rgba( 41, 80,109,1);

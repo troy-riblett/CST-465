@@ -5,5 +5,5 @@
 
 @foreach(CST465.BlogPost post in Model)
 {
-    <div>@Html.ActionLink(post.Title, "ViewSingle", post) - Posted on: @post.Timestamp</div>
+    <div>@Html.ActionLink(post.Title, "ViewSingle", post) - Posted on: @post.Timestamp.ToLocalTime()</div>
 }
