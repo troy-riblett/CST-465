@@ -213,3 +213,13 @@ Z:\documents\GitHub\CST-465\MainProject\Lab1\bin\Microsoft.Practices.ServiceLoca
 Z:\documents\GitHub\CST-465\MainProject\Lab1\bin\Microsoft.Practices.Unity.xml
 Z:\documents\GitHub\CST-465\MainProject\Lab1\bin\Microsoft.Practices.Unity.Configuration.xml
 Z:\documents\GitHub\CST-465\MainProject\Lab1\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
+C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\Microsoft.Practices.Unity.Configuration.dll
+C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\Microsoft.Practices.Unity.dll
+C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
+C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\Unity.Mvc5.dll
+C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\Microsoft.Practices.ServiceLocation.xml
+C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\Microsoft.Practices.Unity.xml
+C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\Microsoft.Practices.Unity.Configuration.xml
+C:\Users\TJ\Documents\GitHub\CST-465\MainProject\Lab1\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml

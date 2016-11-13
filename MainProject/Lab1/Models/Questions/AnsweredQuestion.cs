@@ -9,6 +9,6 @@ namespace CST465
 {
     public class AnsweredQuestion : TestQuestion
     {
-        public string Answer { get; set; }
+        public override string Answer { get; set; }
     }
 }

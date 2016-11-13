@@ -31,7 +31,7 @@ namespace CST465
 
             foreach (TestQuestion question in questionList)
             {
-                question.Answer = Request.QueryString[question.ID.ToString()];
+                question.Answer = Request[ "[" + (question.ID - 1).ToString() + "].Answer" ];
             }
 
             if (ModelState.IsValid)

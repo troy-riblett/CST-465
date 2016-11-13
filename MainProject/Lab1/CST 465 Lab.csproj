@@ -223,6 +223,7 @@
     <Content Include="Views\Midterm\EditorTemplates\LongAnswerQuestion.cshtml" />
     <Content Include="Views\Midterm\EditorTemplates\MultipleChoiceQuestion.cshtml" />
     <Content Include="App_Data\BlogData.json" />
+    <Content Include="Views\Midterm\DisplayTemplates\TestQuestion.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
