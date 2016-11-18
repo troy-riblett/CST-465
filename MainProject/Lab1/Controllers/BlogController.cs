@@ -55,6 +55,7 @@ namespace CST465
             }
         }
 
+        [Authorize]
         public ActionResult Edit(int id)
         {
             BlogPost post = m_blogPostRepo.Get(id);
@@ -64,6 +65,7 @@ namespace CST465
         }
 
         [HttpPost]
+        [Authorize]
         public ActionResult Edit(BlogPostModel model)
         {
             if (ModelState.IsValid)

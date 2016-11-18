@@ -9,6 +9,20 @@
 </head>
 <body>
     <header>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div>Welcome @User.Identity.Name</div>
+            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @id = "logoutForm" }))
+            {
+                @Html.AntiForgeryToken()
+                <a href="Logout" onclick="document.getElementById('logoutForm').submit(); return false;">Logout</a>
+            }
+        }
+        else
+        {
+            @Html.ActionLink("Login", "Login", "Account")
+        }
+           
         <div class="LayoutHeaderMain">PAGE-ANT.COM</div>
         <div class="LayoutHeaderSecondary">We carry more than our weight to parade the best books in front of you</div>
             @RenderSection("header", false)
