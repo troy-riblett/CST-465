@@ -475,7 +475,7 @@ namespace CST465.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Intro");
+            return RedirectToAction("Index", "Home");
         }
 
         //
