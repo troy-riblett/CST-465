@@ -1,0 +1,10 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Admin options";
+}
+
+<ul>
+    <li>@Html.ActionLink("Category", "Index", "Category")</li>
+    <li>@Html.ActionLink("Midterm", "TakeTest", "Midterm")</li>
+    <li>@Html.ActionLink("Product", "Index", "Product")</li>
+</ul>

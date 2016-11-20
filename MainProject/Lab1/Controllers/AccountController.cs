@@ -538,7 +538,7 @@ namespace CST465.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Index");
+            return RedirectToAction("Index", "Home");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

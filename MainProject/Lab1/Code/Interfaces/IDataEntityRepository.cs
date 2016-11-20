@@ -6,5 +6,6 @@
         T Get(int id);
         void Save(T entity);
         List<T> GetList();
+        void Delete(T entity);
     }
 }

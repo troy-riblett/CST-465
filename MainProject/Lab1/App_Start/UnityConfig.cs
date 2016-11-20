@@ -19,7 +19,9 @@ namespace CST465
             // it is NOT necessary to register your controllers
 
             // e.g. container.RegisterType<ITestService, TestService>();
-            container.RegisterType<IDataEntityRepository<BlogPost>, BlogJSONRepository>();
+            container.RegisterType<IDataEntityRepository<BlogPost>, BlogDBRepository>();
+            container.RegisterType<IDataEntityRepository<CategoryData>, CategoryDBRepository>();
+            container.RegisterType<IDataEntityRepository<Product>, ProductDBRepository>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
 
             container.RegisterType<DbContext, ApplicationDbContext>(new HierarchicalLifetimeManager());

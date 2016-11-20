@@ -1,0 +1,33 @@
+﻿@model List<CST465.Product>
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Viewing Products";
+}
+<h1>@ViewBag.Title</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Book Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (CST465.Product product in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(product.Name, "DisplayOne", product)</td>
+                <td>@product.CategoryName</td>
+                <td>@product.Price</td>
+                <td>@product.Quantity  </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@*@foreach (CST465.Product product in Model)
+{
+    @Html.DisplayFor(Model => product)
+}*@

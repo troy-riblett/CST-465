@@ -8,16 +8,11 @@ using System.Configuration;
 
 namespace CST465
 {
-    public class BlogDBRepository : IDataEntityRepository<BlogPost>
+    public class CategoryDBRepository : IDataEntityRepository<CategoryData>
     {
-        public void Delete(BlogPost entity)
+        public CategoryData Get(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        public BlogPost Get(int id)
-        {
-            BlogPost blog = null;
+            CategoryData category = null;
 
             using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["aura"].ConnectionString))
             {
@@ -26,39 +21,36 @@ namespace CST465
                 {
                     command.Connection = connection;
                     command.CommandType = CommandType.Text;
-                    command.CommandText = "Select * From Blog Where ID = @ID";
+                    command.CommandText = "Select * From Category Where ID = @ID";
 
                     command.Parameters.AddWithValue("@ID", id);
                     SqlDataReader reader = command.ExecuteReader();
 
                     while (reader.Read())
                     {
-                        if (blog == null)
+                        if (category == null)
                         {
-                            blog = new BlogPost
+                            category = new CategoryData
                             {
-                                Author = (string)reader["Author"],
-                                Content = (string)reader["Content"],
                                 ID = (int)reader["ID"],
-                                Timestamp = (DateTime)reader["Timestamp"],
-                                Title = (string)reader["Title"]
+                                Name = (string)reader["CategoryName"]
                             };
                         }
                         else
                         {
-                            throw new InvalidOperationException("Blog post data table contains more than one of id: " + id.ToString());
+                            throw new InvalidOperationException("Category data table contains more than one of id: " + id.ToString());
                         }
                     }
                 }
             }
 
 
-            return blog;
+            return category;
         }
 
-        public List<BlogPost> GetList()
+        public List<CategoryData> GetList()
         {
-            List<BlogPost> blogList = new List<BlogPost>();
+            List<CategoryData> categoryList = new List<CategoryData>();
 
             using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["aura"].ConnectionString))
             {
@@ -68,29 +60,26 @@ namespace CST465
                     command.Connection = connection;
                     command.CommandType = CommandType.Text;
 
-                    command.CommandText = "Select * From Blog";
+                    command.CommandText = "Select * From Category";
 
                     SqlDataReader reader = command.ExecuteReader();
 
                     while (reader.Read())
                     {
-                        blogList.Add(new BlogPost
+                        categoryList.Add(new CategoryData
                         {
-                            Author = (string)reader["Author"],
-                            Content = (string)reader["Content"],
                             ID = (int)reader["ID"],
-                            Timestamp = (DateTime)reader["Timestamp"],
-                            Title = (string)reader["Title"]
+                            Name = (string)reader["CategoryName"]
                         });
 
                     }
                 }
             }
 
-            return blogList;
+            return categoryList;
         }
 
-        public void Save(BlogPost entity)
+        public void Save(CategoryData entity)
         {
             using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["aura"].ConnectionString))
             {
@@ -105,22 +94,42 @@ namespace CST465
                     if (entity.ID == 0)
                     {
                         failMessage = "Insert operation failed";
-                        command.CommandText = "INSERT into Blog (Author, Content, Title) Values (@Author, @Content, @Title)";
+                        command.CommandText = "INSERT into Category (CategoryName) Values (@CategoryName)";
                     }
                     else
                     {
                         failMessage = "Update operation failed";
-                        command.CommandText = "UPDATE Blog SET Author = @Author, Content = @Content, Title=@Title WHERE ID = @ID";
+                        command.CommandText = "UPDATE Category SET CategoryName = @CategoryName WHERE ID = @ID";
                         command.Parameters.AddWithValue("@ID", entity.ID);
                     }
 
-                    command.Parameters.AddWithValue("@Author", entity.Author);
-                    command.Parameters.AddWithValue("@Content", entity.Content);
-                    command.Parameters.AddWithValue("@Title", entity.Title);
+                    command.Parameters.AddWithValue("@CategoryName", entity.Name);
 
                     if (command.ExecuteNonQuery() < 1)
                     {
                         throw new InvalidOperationException(failMessage);
+                    }
+
+                }
+            }
+        }
+
+        public void Delete(CategoryData entity)
+        {
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["aura"].ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.Text;
+
+                    command.CommandText = "Delete Category WHERE ID = @ID";
+                    command.Parameters.AddWithValue("@ID", entity.ID);
+
+                    if (command.ExecuteNonQuery() < 1)
+                    {
+                        throw new InvalidOperationException("Unable to delete category");
                     }
 
                 }

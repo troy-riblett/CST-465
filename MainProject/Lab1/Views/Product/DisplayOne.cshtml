@@ -1,0 +1,9 @@
+﻿@model CST465.Product
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = Model.Name;
+}
+<h1>@ViewBag.Title</h1>
+<div>@Model.CategoryName</div>
+<p>@Model.Description</p>
+<div>Price: @Model.Price In stock: @Model.Quantity</div>

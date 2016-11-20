@@ -13,6 +13,11 @@ namespace CST465
 {
     public class BlogJSONRepository : IDataEntityRepository<BlogPost>
     {
+        public void Delete(BlogPost entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public BlogPost Get(int id)
         {
             BlogPost blog = null;

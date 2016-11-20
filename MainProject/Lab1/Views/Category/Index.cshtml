@@ -1,0 +1,33 @@
+﻿@using CST465;
+@model List<CategoryData>
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Viewing Categories";
+}
+<h1>@ViewBag.Title</h1>
+
+@foreach (CategoryData category in Model)
+{
+    <div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken();
+            @Html.Hidden("ID", category.ID)
+            @Html.TextBox("Name", category.Name)
+            <button name="submitButton" value="save" type="submit">Save</button>
+            <button name="submitButton" value="delete" type="submit">Delete</button>
+        }
+    </div>
+}
+
+<br />
+<div>
+   @using (Html.BeginForm())
+   {
+       @Html.AntiForgeryToken();
+       @Html.Hidden("ID", 0)
+       @Html.TextBox("Name")
+       <button name="submitButton" value="create" type="submit">Add</button>
+   }
+</div>
+<br />

@@ -1,0 +1,40 @@
+﻿@model List<CST465.ProductModel>
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Admin - Viewing Products";
+}
+<h1>@ViewBag.Title</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Book Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (CST465.ProductModel product in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(product.Name, "Edit", product)</td>
+                <td>@product.CategoryName</td>
+                <td>@product.Price</td>
+                <td>@product.Quantity</td>
+                <td>@Html.ActionLink("Delete", "Delete", Model)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@*@foreach (CST465.ProductModel product in Model)
+{
+    @Html.DisplayFor(Model => product)
+}*@
+
+<br />
+<div>
+    @Html.ActionLink("Add", "Add", new { ID = 0 })
+</div>
+<br />

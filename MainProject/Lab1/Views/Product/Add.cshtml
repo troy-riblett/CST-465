@@ -1,0 +1,12 @@
+﻿@model CST465.ProductModel
+@{ 
+    ViewBag.Title = "Add a New Product";
+}
+<h1>@ViewBag.Title</h1>
+
+@using (Html.BeginForm("Save", "Product", FormMethod.Post))
+{
+    @Html.EditorForModel()
+
+    <button type="submit">Submit</button>
+}

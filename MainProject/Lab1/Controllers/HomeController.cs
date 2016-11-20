@@ -11,7 +11,12 @@ namespace CST465
         // GET: Home
         public ActionResult Index()
         {
-            
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult Admin()
+        {
             return View();
         }
     }

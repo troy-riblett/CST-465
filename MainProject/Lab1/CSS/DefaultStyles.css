@@ -84,13 +84,13 @@ footer{
     padding-bottom:1px;
 }
 
-nav ul{
+.MainNav ul{
     list-style-type:none;
     margin:0px;
     padding:0px;
 }
 
-nav ul li{
+.MainNav ul li{
     width:100%
 }
 
@@ -115,8 +115,8 @@ img {
         margin: 0 auto;
     }
 
-    nav ul li{
-        width:19%;
+    .MainNav ul li{
+        width:16%;
         display:inline;
         float:left;
         border:1px solid rgba(4,32,55,1);
