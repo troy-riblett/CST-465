@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -22,25 +23,28 @@ namespace CST465
         public ActionResult Index()
         {
             List<Product> list = m_productRepo.GetList();
-            //list.Sort((first, second) => String.Compare(first.Name, second.Name));
+            ////list.Sort((first, second) => String.Compare(first.Name, second.Name));
 
-            List<ProductModel> modelList = new List<ProductModel>();
+            //List<ProductModel> modelList = new List<ProductModel>();
 
-            foreach(Product product in list)
-            {
-                modelList.Add(new ProductModel()
-                {
-                    CategoryName = product.CategoryName,
-                    Code = product.Code,
-                    Description = product.Description,
-                    ID = product.ID,
-                    Name = product.Name,
-                    Price = product.Price,
-                    Quantity = product.Quantity
-                });
-            }
+            //foreach(Product product in list)
+            //{
+            //    modelList.Add(new ProductModel()
+            //    {
+            //        CategoryName = product.CategoryName,
+            //        Code = product.Code,
+            //        Description = product.Description,
+            //        ID = product.ID,
+            //        Name = product.Name,
+            //        Price = product.Price,
+            //        Quantity = product.Quantity,
+            //        ImageID = product.ProductImage.ID
+            //    });
+            //}
 
-            return View(modelList);
+            //PopulateImageMappings(list);
+
+            return View(list);
         }
 
         [Authorize]
@@ -70,9 +74,23 @@ namespace CST465
         }
 
         [Authorize]
-        public ActionResult Delete(ProductModel model)
+        public ActionResult Delete(int ID)
         {
-            if (ModelState.IsValid)
+            Product product = m_productRepo.Get(ID);
+
+            if (product != null)
+            {
+                m_productRepo.Delete(product);
+            }
+            
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        [Authorize]
+        public ActionResult Save(ProductModel model)
+        {
+            if (ModelState.IsValid && model.Image != null) // && model.Image.ContentLength < 50000)
             {
                 Product post = new Product()
                 {
@@ -82,26 +100,14 @@ namespace CST465
                     ID = model.ID,
                     Name = model.Name,
                     Price = model.Price,
-                    Quantity = model.Quantity
+                    Quantity = model.Quantity,
                 };
 
-                m_productRepo.Delete(post);
-                
-            }
-
-            return RedirectToAction("Index");
-        }
-
-        [HttpPost]
-        [Authorize]
-        public ActionResult Save(ProductModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                Product post = new Product()
-                { CategoryName = model.CategoryName, Code = model.Code,
-                    Description = model.Description, ID = model.ID, Name = model.Name, Price = model.Price,
-                    Quantity = model.Quantity};
+                using (var memoryStream = new MemoryStream())
+                {
+                    model.Image.InputStream.CopyTo(memoryStream);
+                    post.FileData = memoryStream.ToArray();
+                }
 
                 m_productRepo.Save(post);
                 return RedirectToAction("Index");
@@ -127,14 +133,25 @@ namespace CST465
         public ActionResult Display()
         {
             List<Product> list = m_productRepo.GetList();
+
+            //PopulateImageMappings(list);
             //list.Sort((first, second) => String.Compare(first.Name, second.Name));
             return View(list);
         }
 
         //Open to end users
-        public ActionResult DisplayOne(Product product)
+        public ActionResult DisplayOne(int ID)
         {
-            return View(product);
+            Product product = m_productRepo.Get(ID);
+
+            if (product != null)
+            {
+                return View(product);
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
         }
     }
 }

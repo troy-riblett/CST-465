@@ -17,11 +17,15 @@
     <tbody>
         @foreach (CST465.Product product in Model)
         {
+            var base64 = Convert.ToBase64String(product.FileData);
+            var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+            
             <tr>
-                <td>@Html.ActionLink(product.Name, "DisplayOne", product)</td>
+                <td>@Html.ActionLink(product.Name, "DisplayOne", new { @ID = product.ID })</td>
                 <td>@product.CategoryName</td>
-                <td>@product.Price</td>
-                <td>@product.Quantity  </td>
+                <td >@product.Price</td>
+                <td class="rightAllign">@product.Quantity  </td>
+                <td><img class="thumbnail" src='@imgSrc' alt="@product.Name"/></td>
             </tr>
         }
     </tbody>

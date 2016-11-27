@@ -2,8 +2,11 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = Model.Name;
+    var base64 = Convert.ToBase64String(Model.FileData);
+    var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
 }
 <h1>@ViewBag.Title</h1>
 <div>@Model.CategoryName</div>
 <p>@Model.Description</p>
+<img class="main" src='@imgSrc' alt="@Model.Name" />
 <div>Price: @Model.Price In stock: @Model.Quantity</div>

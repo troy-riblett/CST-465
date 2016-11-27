@@ -84,7 +84,7 @@ footer{
     padding-bottom:1px;
 }
 
-.MainNav ul{
+ul{
     list-style-type:none;
     margin:0px;
     padding:0px;
@@ -101,15 +101,37 @@ nav ul li a{
     text-align:center;
 }
 
-img {
-    width:100%;
+.mainPicture{
+    width:10%;
     height:auto;
-    
+}
+
+img.thumbnail{
+    width: 150px;
+}
+
+img.main{
+    width: 100%;
+}
+
+td.leftAllign{
+    text-align:left;
+}
+
+td.rightAllign{
+    text-align:right;
 }
 
 @media screen and (min-width:481px) {
-    img {
+    .mainPicture {
         width: auto;
+        height: auto;
+        display:block;
+        margin: 0 auto;
+    }
+
+    img.main{
+        width: 50%;
         height: auto;
         display:block;
         margin: 0 auto;
