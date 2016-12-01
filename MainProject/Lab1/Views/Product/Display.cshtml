@@ -18,7 +18,7 @@
         @foreach (CST465.Product product in Model)
         {
             var base64 = Convert.ToBase64String(product.FileData);
-            var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+            var imgSrc = String.Format("data:image;base64,{0}", base64);
             
             <tr>
                 <td>@Html.ActionLink(product.Name, "DisplayOne", new { @ID = product.ID })</td>
