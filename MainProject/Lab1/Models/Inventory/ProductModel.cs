@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 using System.Web;
+using System.Collections.Generic;
 
 namespace CST465
 {
@@ -20,6 +21,8 @@ namespace CST465
 
         [Required]
         public string CategoryName { get; set; }
+
+        public List<CategoryData> AvailableCategories { get; set; }
 
         [StringLength(200)]
         public string Description { get; set; }

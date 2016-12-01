@@ -23,26 +23,6 @@ namespace CST465
         public ActionResult Index()
         {
             List<Product> list = m_productRepo.GetList();
-            ////list.Sort((first, second) => String.Compare(first.Name, second.Name));
-
-            //List<ProductModel> modelList = new List<ProductModel>();
-
-            //foreach(Product product in list)
-            //{
-            //    modelList.Add(new ProductModel()
-            //    {
-            //        CategoryName = product.CategoryName,
-            //        Code = product.Code,
-            //        Description = product.Description,
-            //        ID = product.ID,
-            //        Name = product.Name,
-            //        Price = product.Price,
-            //        Quantity = product.Quantity,
-            //        ImageID = product.ProductImage.ID
-            //    });
-            //}
-
-            //PopulateImageMappings(list);
 
             return View(list);
         }
@@ -53,10 +33,9 @@ namespace CST465
         {
             List<CategoryData> list = m_categoryRepo.GetList();
             list.Sort((first, second) => String.Compare(first.Name, second.Name));
-            //Tuple<ProductModel, List<CategoryData>> newModel = new Tuple<ProductModel, List<CategoryData>>(model, list);
-            //return View(newModel);
 
-            ViewData["Categories"] = list;
+            model.AvailableCategories = list;
+
             return View(model);
         }
 
@@ -66,10 +45,9 @@ namespace CST465
         {
             List<CategoryData> list = m_categoryRepo.GetList();
             list.Sort((first, second) => String.Compare(first.Name, second.Name));
-            //Tuple<ProductModel, List<CategoryData>> newModel = new Tuple<ProductModel, List<CategoryData>>(model, list);
-            //return View(newModel);
 
-            ViewData["Categories"] = list;
+            model.AvailableCategories = list;
+
             return View(model);
         }
 
@@ -116,7 +94,8 @@ namespace CST465
             {
                 List<CategoryData> list = m_categoryRepo.GetList();
                 list.Sort((first, second) => String.Compare(first.Name, second.Name));
-                ViewData["Categories"] = list;
+
+                model.AvailableCategories = list;
 
                 if (model.ID == 0)
                 {
@@ -134,8 +113,6 @@ namespace CST465
         {
             List<Product> list = m_productRepo.GetList();
 
-            //PopulateImageMappings(list);
-            //list.Sort((first, second) => String.Compare(first.Name, second.Name));
             return View(list);
         }
 

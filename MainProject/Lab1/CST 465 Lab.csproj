@@ -314,9 +314,7 @@
     <Content Include="Views\Product\DisplayOne.cshtml" />
     <Content Include="Views\Product\Add.cshtml" />
     <Content Include="Views\Product\Edit.cshtml" />
-    <Content Include="Views\Product\DisplayTemplates\ProductModel.cshtml" />
     <Content Include="Views\Product\EditorTemplates\ProductModel.cshtml" />
-    <Content Include="Views\Product\DisplayTemplates\Product.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
