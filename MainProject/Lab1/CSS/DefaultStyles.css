@@ -35,42 +35,49 @@ html{
 }
 
 body {
-    background-color:rgba(113,142,164,1);
+    background-color:#718EA4;
+    border: solid 1px #999;
 }
 
 h1 {
     font-size:32px;
-    color: rgba( 41, 80,109,1);
+    color: #29506D;
     font-weight:700;
-    text-align:center;
 }
 
 h2 {
     font-size:26px;
-    color: rgba( 41, 80,109,1);
+    color: #29506D;
     font-weight:600;
-    text-align:center;
 }
 
 h3 {
     font-size:20px;
-    color: rgba( 41, 80,109,1);
+    color: #29506D;
     font-weight:500;
-    text-align:center;
+}
+
+header{
+    background-color: #CCC;
 }
 
 .LayoutHeaderMain {
     font-weight:800;
     font-size:40px;
-    color: rgba( 41, 80,109,1);
+    color: #29506D;
     text-align:center;
     width:100%;
+}
+
+main {
+    padding: 0 15px;
+    background-color: #FFF
 }
 
 .LayoutHeaderSecondary{
     font-size:14px;
     width:100%;
-    color:rgba( 18, 54, 82,1);
+    color:#123652;
     text-align:center;
 }
 
@@ -79,8 +86,8 @@ h3 {
 }
 
 footer{
-    color:rgba(  4, 32, 55,1);
-    background-color:rgba( 41, 80,109,1);
+    color:#042037;
+    background-color:#29506D;
     padding-bottom:1px;
 }
 
@@ -90,15 +97,24 @@ ul{
     padding:0px;
 }
 
+.MainNav {
+    display:block;
+}
+
 .MainNav ul li{
-    width:100%
+    width:100%;
+    display:block;
 }
 
 nav ul li a{
     display:block;
     width:100%;
-    border:1px solid rgba(4,32,55,1);
+    outline:1px solid #042037;
     text-align:center;
+    color: #042037;
+}
+nav ul li a:hover{
+    background-color: #ddd;
 }
 
 .mainPicture{
@@ -138,10 +154,8 @@ td.rightAllign{
     }
 
     .MainNav ul li{
-        width:16%;
-        display:inline;
+        width: calc(100% / 6);
         float:left;
-        border:1px solid rgba(4,32,55,1);
     }
 
     html{
