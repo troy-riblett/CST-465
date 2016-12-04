@@ -5,17 +5,6 @@
 }
 <h1>Viewing Blog Posts</h1>
 
-@*@foreach (CST465.BlogPost blog in Model)
-{
-    @Html.DisplayFor(Model => blog)
-    <div>
-        <h2>@blog.Title</h2>
-        <p>@blog.Content</p>
-        <div>By: @blog.Author</div>
-        @Html.ActionLink("Edit Post", "Edit", new { @ID = blog.ID })
-    </div>
-}*@
-
 @Html.Partial("_BlogPostLinkList", Model)
 
 <br />

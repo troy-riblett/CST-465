@@ -113,7 +113,35 @@ namespace CST465
         {
             List<Product> list = m_productRepo.GetList();
 
-            return View(list);
+            List<CategoryData> categoryList = m_categoryRepo.GetList();
+            categoryList.Add(new CategoryData() { ID = -1, Name = "all" });
+            categoryList.Sort((first, second) => String.Compare(first.Name, second.Name));
+
+            ProductContainer displayData = new ProductContainer() { CategoryList = categoryList, ProductList = list };
+
+            return View(displayData);
+        }
+
+        [HttpPost]
+        public ActionResult Display(string filter, string categoryFilter)
+        {
+            List<Product> list = m_productRepo.GetList();
+            List<CategoryData> categoryList = m_categoryRepo.GetList();
+            categoryList.Add(new CategoryData() { ID = -1, Name = "all" });
+            categoryList.Sort((first, second) => String.Compare(first.Name, second.Name));
+
+            ProductContainer displayData = new ProductContainer() { CategoryList = categoryList };
+
+            if (categoryFilter.Equals("all"))
+            {
+                displayData.ProductList = list.Where(i => i.Name.ToLower().Contains(filter.ToLower())).ToList();
+            }
+            else
+            {
+                displayData.ProductList = list.Where(i => i.Name.ToLower().Contains(filter.ToLower()) && i.CategoryName.Equals(categoryFilter)).ToList();
+            }
+
+            return View(displayData);
         }
 
         //Open to end users

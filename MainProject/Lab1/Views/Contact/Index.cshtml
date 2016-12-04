@@ -1,7 +1,33 @@
-﻿@{
+﻿@model CST465.ContactModel
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Contacts";
 }
 
 <h1>Contacts</h1>
-<p>Troy Riblett - troy.riblett@oit.edu</p>
+<div>Contact Phone Number: 999-999-9999</div>
+<div>Contact Address: 99999 Onyx Drive, Klamath Falls Oregon</div>
+
+<h2>Questions, comments or complaints?</h2>
+@using (Html.BeginForm("SubmissionReceived", "Contact", FormMethod.Post))
+{
+    @Html.AntiForgeryToken();
+    <div>
+        @Html.LabelFor(model => model.Name, new { @class = "labelOwnLine" })
+        @Html.TextBoxFor(model => model.Name)
+        @Html.ValidationMessageFor(model => model.Name)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.PhoneNumber, new { @class = "labelOwnLine" })
+        @Html.TextBoxFor(model => model.PhoneNumber)
+        @Html.ValidationMessageFor(model => model.PhoneNumber)
+    </div>
+
+    @Html.LabelFor(model => model.Comment)
+    <br />
+    @Html.TextAreaFor(model => model.Comment)
+    @Html.ValidationMessageFor(model => model.Comment)
+    <br />
+
+    <button type="submit">Submit</button>
+}

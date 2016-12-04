@@ -1,0 +1,15 @@
+﻿@model IEnumerable<CST465.Product>
+@{
+    Layout = null;
+}
+
+@foreach (CST465.Product product in Model)
+{
+    var base64 = Convert.ToBase64String(product.FileData);
+    var imgSrc = String.Format("data:image;base64,{0}", base64);
+    
+    <div>@product.Name in @product.CategoryName</div>
+    <p>@product.Description</p>
+    <img class="thumbnail" src='@imgSrc' alt="@product.Name" />
+    <div></div>
+}
